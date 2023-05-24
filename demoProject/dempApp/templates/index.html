@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Pic&Cofee</title>
+</head>
+<body>
+    <div class="main">
+       <div id="test1">R&#1044MTIN</div>
+       <div id="test2">CAD/CAM Design & Services</div>
+       <hr>
+       <div class="div-button">
+            <ul>
+                {% for clists in catalogs%}
+                    <ul class="div-img">
+                      <form action="{% url 'dList' %}" method="post">
+                        {% csrf_token %}
+                        <button class="button button1" type="submit"
+                                value={{clists.id}}
+                                name="submit">
+                                 {{clists.groupName}}
+                        </button>
+                      </form>  
+                    </ul>
+                 {%endfor%}
+            </ul>
+        <button class="button button1" type="submit"
+                value={{cList_path}}
+                onclick="location.href='{% url 'contactMe' %}'" 
+                name="mybtn">Contact Me</button>
+       
+        <button class="button button1" type="submit"
+                value={{cList_path}}
+                onclick="location.href='{% url 'aboutMe' %}'" 
+                name="mybtn">About Me</button>                      
+       </div> 
+       {%if modelSelected == "detail"%}
+         <div class="div-img2">
+              {% for clist in  catalogs %} 
+              <img src="{{clist.groupPic.url}}" width="200" height="250">
+              <p> {{clist.groupName}}</p>
+              {%endfor%}        
+         </div>
+         {% for dlists in details%}
+          <ul class="div-img">
+           <form action="{% url 'order' %}" method="post">
+             {% csrf_token %}
+             <input type="hidden" name="next" value="cList">             
+             <button type="submit"
+                value={{dlists.id}}
+                name="submit">
+                <h3> {{dlists.detailName}}</h3>
+                <img src="{{dlists.detailPic.url}}"  width="150" height="150">
+                <br />
+                <a  href="{% url 'order' %}" >Order</a>            
+             </button>
+           </form>  
+          </ul>
+ 
+         {%endfor%}
+         {%elif modelSelected == "contactMe"%}
+           <div class="contactMe">
+              <img src="../static/css/ramtin.png"  width="200" height="250">
+              <p>{{myContact}}</p>
+              <a  href="{% url 'index' %}" >Go Back</a> 
+           </div>             
+
+         {%elif modelSelected == "aboutMe"%}
+           <div class="aboutMe">
+              <img src="../static/css/ramtin.png"  width="200" height="250">
+              <p>{{myProfile}}</p>
+              <a  href="{% url 'index' %}" >Go Back</a> 
+           </div>             
+       {%endif%}        
+    </div>
+</body>
+</html>

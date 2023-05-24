@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Pic&Cofee</title>
+</head>
+<body>
+    <div class="main">
+
+       <div id="test1">I&#1124COCO</div>
+       <div id="test2">CAFFEE & PICTURES</div>
+       <hr>
+       <div id="test3"><br> Address: 173 Pearwood Ln,Corona , Ca, 92882</div>
+       <div id="test4"><br> Email: mah67200700@gmail.com</div>
+       <button class="button button1" type="submit"
+               value={{cList_path}}
+               onclick="location.href='{% url 'cList' %}'" 
+               name="mybtn">Picture List</button>
+        {% if sw1 %}
+            <ul>
+              {% if modelSelected == "catalog" %}  
+                {% for clists in catalogs%}
+                    <ul class="div-img">
+                      <form action="{% url 'dList' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit"
+                                value={{clists.id}}
+                                name="submit">
+                                <h3> {{clists.groupName}}</h3>
+                                <img src="{{clists.groupPic.url}}"  width="200" height="250">
+                                <br />
+                                <a  href="{% url 'index' %}" >Go Back</a>                              
+                        </button>
+                      </form>  
+                    </ul>
+                {%endfor%}
+                
+                
+              {%else%} 
+                  {% for dlists in details%}
+                     <ul class="div-img">
+                      <form action="{% url 'order' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit"
+                           value={{dlists.id}}
+                           name="submit">
+                           <h3> {{dlists.detailName}}</h3>
+                           <img src="{{dlists.detailPic.url}}"  width="200" height="250">
+                           <br />
+                           <a  href="{% url 'cList' %}" >Go Back!!!</a>            
+                        </button>
+                      </form>  
+                     </ul>
+                  {%endfor%}
+              {%endif%}        
+            </ul>
+            {% with sw1=False%}
+            {%endwith%}
+        {%else%} 
+          <div>
+            <!-- <img src="{%static 'images/boom.jpg' %}" class="image" > -->
+          </div>
+        {%endif%} 
+    </div>
+</body>
+</html>

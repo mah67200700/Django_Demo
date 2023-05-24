@@ -1,0 +1,24 @@
+body {
+    background-color: aqua;
+    border-color: black;
+    border-radius: 10px;
+    border-style: solid;
+    
+}
+
+
+h5 {
+    color: #1bf0a6;
+    font-size: 35px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    text-align: center;
+}
+
+div {
+    background-color: yellow;
+}
+div h5 {
+    font-size: 20px;
+    color: blue;
+}

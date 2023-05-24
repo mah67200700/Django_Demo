@@ -1,0 +1,202 @@
+body {
+    margin: 0px;
+    background-image: url("ramtinBackground.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  
+  }
+.main {
+    display: block;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    color: black;
+    background-color: rgb(193, 224, 157);
+    opacity: 0.8;
+
+} 
+
+.button {
+  border: none;
+  color: rgb(7, 6, 6);
+  background-color: rgb(193, 224, 157);  
+  padding: 15px 10px 10px 10px;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px ;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: aqua;
+}
+
+.button:active {
+  background-color: red;
+}
+.button1 {
+  background-color: rgb(193, 224, 157);
+}
+.button2 {
+  background-color: rgb(193, 224, 157);
+}
+
+div.aboutMe {
+              float: right;
+              align-items: end;
+              width:auto;
+              height:auto;
+              margin: 10px;
+              border-radius: 10px;
+              border: 3px;
+              border-style: solid;
+              font-size: 18px;
+              font-weight: bold;
+              white-space: pre-line;
+              color:black;
+              background-color: aliceblue;
+              opacity: 1.0;
+}
+
+div.contactMe {
+              float: right;
+              align-items: end;
+              width:  auto;
+              height: auto;
+              margin: 10px;
+              border-radius: 10px;
+              border: 3px;
+              border-style: solid;
+              font-size: 18px;
+              font-weight: bold;
+              white-space: pre-line;
+              color:black;
+              background-color: aliceblue;
+              opacity: 1.0;
+}
+.mypic {
+  float: left;
+  width: 20%;
+  height: 350px;
+  font-size: 20px;
+  font-weight: normal;
+  align-items: center;
+  text-align: center;
+  color: rgb(113, 15, 226);
+  background-color: rgb(193, 224, 157);
+  padding: 0px;
+  margin: 10px;
+  border-radius: 10px;
+}     
+#test1 {
+    font-size: 55px;
+    font-weight: normal;
+    text-align: center;
+  }
+#test2 {
+    font-size: 25px;
+    font-weight: normal;
+    text-align: center;
+  } 
+#test3 {
+    float: left;
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: normal;
+    align-items: center;
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+    background-color: rgb(193, 224, 157);
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+  }
+#test4 {
+    float: left;
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: normal;
+    align-items: center;
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+    background-color: rgb(193, 224, 157);
+    padding: 0px;
+    margin: 0px;
+    border: 0px;    
+  } 
+
+.image {
+    width: 320px;
+    height: 320px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: -50px;
+    opacity: 0.5;
+ }
+ hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+ } 
+
+ a {
+  color: red;
+  font-size: 20px;
+ }
+ .div-button{
+  float: left;
+  color: rgb(7, 6, 6);
+  background-color: rgb(193, 224, 157);  
+  justify-content: center; 
+  align-items: center;
+  width: 100%;
+  display:flex; 
+  padding-top:0%;
+ }
+ .div-img{
+  float: left;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  padding: 1px 1px 1px 1px;
+}
+
+.div-img2{
+  float: left;
+  justify-content: center;
+  align-items: center;
+  display: list-item;
+  padding-top:0%;
+  padding-left: 10px;
+ }
+img{
+  transition: transform .1s;
+  margin:0 auto;
+  background-color: rgb(173, 173, 237);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+img:hover{
+  transform:scale(2.0);
+}
+p {
+  margin: 0;
+  padding: 10px;
+  color: blue;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: azure;
+}

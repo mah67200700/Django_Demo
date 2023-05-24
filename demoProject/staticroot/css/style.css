@@ -1,0 +1,135 @@
+body {
+    margin: 0px;
+    background-image: url("boom.jpg");
+  }
+.main {
+    display: block;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    color: black;
+    background-color: rgb(181, 242, 157);
+    opacity: .85;
+
+} 
+
+.button {
+  border: none;
+  color: rgb(7, 6, 6);
+  background-color: rgb(115, 64, 218);  
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 200px;
+  cursor: pointer;
+}
+.button1 {
+  background-color: rgb(197, 184, 220);
+}
+.button2 {
+  background-color: rgb(204, 195, 222);
+}
+
+.mypic {
+  float: left;
+  width: 25%;
+  height: 450px;
+  font-size: 12px;
+  font-weight: normal;
+  align-items: center;
+  text-align: center;
+  text-decoration: underline;
+  color: black;
+  background-color: rgb(190, 178, 226);
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}     
+#test1 {
+    font-size: 35px;
+    font-weight: normal;
+    text-align: center;
+  }
+#test2 {
+    font-size: 15px;
+    font-weight: normal;
+    text-align: center;
+  } 
+#test3 {
+    float: left;
+    width: 50%;
+    height: 40px;
+    font-size: 12px;
+    font-weight: normal;
+    align-items: center;
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+    background-color: rgb(193, 224, 157);
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+  }
+#test4 {
+    float: left;
+    width: 50%;
+    height: 40px;
+    font-size: 12px;
+    font-weight: normal;
+    align-items: center;
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+    background-color: rgb(193, 224, 157);
+    padding: 0px;
+    margin: 0px;
+    border: 0px;    
+  } 
+
+.image {
+    width: 320px;
+    height: 320px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: -50px;
+    opacity: .5;
+ }
+ hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+ } 
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
