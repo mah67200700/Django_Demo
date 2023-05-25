@@ -64,14 +64,14 @@
          {%endfor%}
          {%elif modelSelected == "contactMe"%}
            <div class="contactMe">
-              <img src="../static/css/ramtin.png"  width="200" height="250">
+            <!--  <img src="../static/css/ramtin.png"  width="200" height="250"> -->
               <p>{{myContact}}</p>
               <a  href="{% url 'index' %}" >Go Back</a> 
            </div>             
 
          {%elif modelSelected == "aboutMe"%}
            <div class="aboutMe">
-              <img src="../static/css/ramtin.png"  width="200" height="250">
+            <!-- <img src="../static/css/ramtin.png"  width="200" height="250">-->
               <p>{{myProfile}}</p>
               <a  href="{% url 'index' %}" >Go Back</a> 
            </div>             

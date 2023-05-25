@@ -50,7 +50,7 @@ div.aboutMe {
               align-items: end;
               width:auto;
               height:auto;
-              margin: 10px;
+              margin-right: 100px;
               border-radius: 10px;
               border: 3px;
               border-style: solid;
@@ -67,7 +67,7 @@ div.contactMe {
               align-items: end;
               width:  auto;
               height: auto;
-              margin: 10px;
+              margin-right: 150px;
               border-radius: 10px;
               border: 3px;
               border-style: solid;
