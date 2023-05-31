@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/quote.css' %}">
+
+    <title>Quote</title>
+</head>
+<body>
+    <h3> Send Your Request For Quote</h3>
+    <form action="{% url 'getQuote' %}" method="POST">
+        {% csrf_token %}
+        <label for="Name">Name:</label>
+        <input type="text" id="Name" name="Name" value="" ><br>     
+        <label for="Phone">Phone Number:</label>
+        <input type="tel" name="Phone" value="0" ><br> 
+        <label for="Email">Email:</label>
+        <input type="email" name="Email" value="" ><br> 
+        <label for="Msg">Message:</label><br>
+        <textarea  name="Msg"></textarea><br/>
+    <!--    <input type="text" name="Msg" value="" ><br> -->  
+                                        
+        <button type="submit"
+                value="submit"
+                name="submit">Submit</button>
+
+        <button type="button"
+                value="reset"
+                onclick="location.href='{% url 'getQuote' %}'"
+                name="reset">Reset</button>                  
+        <button type="button"
+                value="cancel"
+                onclick="location.href='{% url 'index' %}'"
+                name="cancel">Cancel</button>   
+      </form>   
+
+   
+</body>
+</html>

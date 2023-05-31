@@ -29,6 +29,11 @@
                  {%endfor%}
             </ul>
         <button class="button button1" type="submit"
+            value={{cList_path}}
+            onclick="location.href='{% url 'getQuote' %}'" 
+            name="mybtn">Quota</button>
+
+        <button class="button button1" type="submit"
                 value={{cList_path}}
                 onclick="location.href='{% url 'contactMe' %}'" 
                 name="mybtn">Contact Me</button>

@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .models import catalog
 from .models import detail
+from .models import quote
 # Create your views here.
 image_name = "boom.JPG"
 modelSelected="" 
@@ -65,7 +66,30 @@ def order(request):
           "dList_path":"order",
             }
        return render(request,"order.html",context)
-             
+
+def getQuote(request):
+        global modelSelected
+        if request.method == "POST":
+           q=quote()
+           name=request.POST.get("Name",None)
+           phone=request.POST.get("Phone",None)
+           email=request.POST.get("Email",None)
+           msg=request.POST.get("Msg",None)
+           q.name=name
+           q.phoneNumber=phone
+           q.email=email
+           q.message=msg        
+           q.save()
+           return render(request,"quote.html")            
+        else:
+                    
+         context  = {
+           "modelSelected":"quote",
+           "cList_path":"cList",
+           "quote":quote.objects.all(),
+              }
+         return render(request,"quote.html",context)      
+
 def contactMe(request):
       global modelSelected
       with open(os.path.join(settings.BASE_DIR, 'contact.txt'),'r') as file_:
@@ -73,7 +97,7 @@ def contactMe(request):
       context  = {
         "dList_path":"contactMe",
         "modelSelected":"contactMe",
-       "catalogs":catalog.objects.all(),
+        "catalogs":catalog.objects.all(),
         "myContact" : fileContent,
           }
       return render(request,"index.html",context)         
@@ -90,4 +114,4 @@ def aboutMe(request):
         "myProfile" : fileContent,
           }
       return render(request,"index.html",context)         
-    
+

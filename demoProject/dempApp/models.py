@@ -19,4 +19,13 @@ class detail(models.Model):
         max_length=100,
         default=None)
 
+class quote(models.Model): 
+    name=models.CharField(max_length=64)
+    phoneNumber = models.IntegerField()
+    email = models.CharField(max_length=64) 
+    message=  models.CharField(max_length=512)   
+        
+        
+        
+        
     

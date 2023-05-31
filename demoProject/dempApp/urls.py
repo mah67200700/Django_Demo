@@ -7,6 +7,7 @@ urlpatterns=[
     path('dlist/',views.dList,name="dList"),
     path('image/',views.image,name="image"),
     path('order/',views.order,name="order"),
+    path('getQuote/',views.getQuote,name="getQuote"),
     path('contactMe/',views.contactMe,name="contactMe"),
     path('aboutMe/',views.aboutMe,name="aboutMe"),
 ]
