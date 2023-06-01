@@ -5,82 +5,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsivestyle.css' %}">
     <title>Pic&Cofee</title>
 </head>
 <body>
-    <div class="main">
-       <div id="test1">R&#1044MTIN</div>
-       <div id="test2">CAD/CAM Design & Services</div>
-       <hr>
-       <div class="div-button">
-            <ul>
-                {% for clists in catalogs%}
-                    <ul class="div-img">
-                      <form action="{% url 'dList' %}" method="post">
-                        {% csrf_token %}
-                        <button class="button button1" type="submit"
-                                value={{clists.id}}
-                                name="submit">
-                                 {{clists.groupName}}
-                        </button>
-                      </form>  
-                    </ul>
-                 {%endfor%}
-            </ul>
-        <button class="button button1" type="submit"
-            value={{cList_path}}
-            onclick="location.href='{% url 'getQuote' %}'" 
-            name="mybtn">Quota</button>
+    <div class="header">
+       <h1>R&#1044MTIN</h1>
+       <h3>CAD/CAM Design & Services</h3>
+    </div>
+    <hr>
+    <div class="row div-button">
+        {% for clists in catalogs%}
+            <form action="{% url 'dList' %}" method="post">
+                {% csrf_token %}
+                <button class="col-1 col-s-1 button"
+                        type="submit"
+                        value={{clists.id}}
+                        name="submit">{{clists.groupName}}</button>
+            </form>  
+        {%endfor%}
+        <button class="col-1 col-s-1 button" 
+                type="submit"
+                value={{cList_path}}
+                onclick="location.href='{% url 'getQuote' %}'" 
+                name="mybtn">quote</button>
 
-        <button class="button button1" type="submit"
+        <button class="col-1 col-s-1 button"
+                type="submit"
                 value={{cList_path}}
                 onclick="location.href='{% url 'contactMe' %}'" 
-                name="mybtn">Contact Me</button>
+                name="mybtn">Contact</button>
        
-        <button class="button button1" type="submit"
+        <button class="col-1 col-s-1 button"
+                type="submit"
                 value={{cList_path}}
                 onclick="location.href='{% url 'aboutMe' %}'" 
-                name="mybtn">About Me</button>                      
-       </div> 
-       {%if modelSelected == "detail"%}
-         <div class="div-img2">
-              {% for clist in  catalogs %} 
-              <img src="{{clist.groupPic.url}}" width="200" height="250">
-              <p> {{clist.groupName}}</p>
-              {%endfor%}        
-         </div>
-         {% for dlists in details%}
-          <ul class="div-img">
-           <form action="{% url 'order' %}" method="post">
-             {% csrf_token %}
-             <input type="hidden" name="next" value="cList">             
-             <button type="submit"
-                value={{dlists.id}}
-                name="submit">
-                <h3> {{dlists.detailName}}</h3>
-                <img src="{{dlists.detailPic.url}}"  width="150" height="150">
-                <br />
-                <a  href="{% url 'order' %}" >Order</a>            
-             </button>
-           </form>  
-          </ul>
+                name="mybtn">About</button>                      
+      </div> 
+      <div class="row">   
  
-         {%endfor%}
-         {%elif modelSelected == "contactMe"%}
-           <div class="contactMe">
+        {%if modelSelected == "detail"%}
+           <div class="col-3 col-s-3">
+              {% for clist in  catalogs %} 
+                 <img src="{{clist.groupPic.url}}" width="100%" height="250">
+                 <p> {{clist.groupName}}</p>
+              {%endfor%}        
+           </div>
+           {% for dlists in details%}
+              <div class="col-2 col-s-2">
+                 <form action="{% url 'order' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="cList">             
+                    <button type="submit"
+                            value={{dlists.id}}
+                            name="submit">
+                            <h3> {{dlists.detailName}}</h3>
+                            <img src="{{dlists.detailPic.url}}"  width="100%" height="150">
+                            <br />
+                            <a  href="{% url 'order' %}" >Order</a>            
+                    </button>
+                  </form>  
+              </div>  
+            {%endfor%}
+        {%elif modelSelected == "contactMe"%}
+           <div class="col-4 col-s-4 txt">
             <!--  <img src="../static/css/ramtin.png"  width="200" height="250"> -->
               <p>{{myContact}}</p>
               <a  href="{% url 'index' %}" >Go Back</a> 
            </div>             
 
-         {%elif modelSelected == "aboutMe"%}
-           <div class="aboutMe">
+        {%elif modelSelected == "aboutMe"%}
+           <div class="col-5 col-s-5 txt">
             <!-- <img src="../static/css/ramtin.png"  width="200" height="250">-->
               <p>{{myProfile}}</p>
               <a  href="{% url 'index' %}" >Go Back</a> 
            </div>             
-       {%endif%}        
+        {%endif%}        
     </div>
 </body>
 </html>
