@@ -33,7 +33,8 @@ def dList(request):
     context  = {
        "dList_path":"dList",
        "modelSelected":"detail",
-       "catalogs":catalog.objects.all().filter(id=selection),
+       "catalogs":catalog.objects.all(),
+       "catalog":catalog.objects.all().filter(id=selection),
        "details":detail.objects.all().filter(catalog=selection),
         }
     return render(request,"index.html",context)                                 
@@ -69,7 +70,7 @@ def order(request):
 
 def getQuote(request):
         global modelSelected
-        if request.method == "POST":
+        if (request.method == "POST" and modelSelected== "quote"):
            q=quote()
            name=request.POST.get("Name",None)
            phone=request.POST.get("Phone",None)
